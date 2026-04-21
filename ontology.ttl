@@ -810,11 +810,8 @@
 :NominalFrequencyValueSet rdf:type rdfs:Datatype ;
                           owl:equivalentClass [ rdf:type rdfs:Datatype ;
                                                 owl:oneOf [ rdf:type rdf:List ;
-                                                            rdf:first 60 ;
-                                                            rdf:rest [ rdf:type rdf:List ;
-                                                                       rdf:first "0  multiple option selection" ;
-                                                                       rdf:rest rdf:nil
-                                                                     ]
+                                                            rdf:first "0  multiple option selection" ;
+                                                            rdf:rest rdf:nil
                                                           ]
                                               ] .
 
