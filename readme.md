@@ -10,7 +10,12 @@
 
 LPPO is a data dictionary for the properties describing electric lighting products, luminaires, and sensing devices used in the construction industry. It extends the [Building Product Property Ontology (BPPO)](https://w3id.org/ppon/bppo), which implements the ISO 23386:2020 framework.
 
-**v2.0 change:** All 359 property classes previously identified by opaque GUIDs (e.g., `lppo.owl#0DlY8lmBT8gxJCl04yS42z`) are now identified by human-readable, name-derived URIs (e.g., `lppo:DimmingControlMethod`). Original GUIDs are retained as `bppo:hasGUID` values for traceability to the source standard. All 46 enumerated value sets have been compacted from verbose nested `rdf:List` chains into readable Turtle list syntax.
+**v2.0 changes:**
+- All 359 property descriptors restructured from OWL classes into `owl:DatatypeProperty` (camelCase URIs), with domain, range, and metadata as direct annotations
+- 8 new `owl:ObjectProperty` linking `bpo:Product` to each property group
+- 8 property group `owl:Class` declarations retained
+- 46 enumerated value sets compacted from nested `rdf:List` to Turtle list syntax
+- Original GUIDs preserved as `bppo:hasGUID` annotations for traceability
 
 ## Repository Structure
 
@@ -29,16 +34,6 @@ LPPO is a data dictionary for the properties describing electric lighting produc
     ├── lppo_v2.ttl         # Source ontology (Turtle, v2.0)
     └── bppo.ttl            # Building Product Property Ontology (dependency)
 ```
-
-## Serializations
-
-| Format | URL |
-|---|---|
-| HTML docs | [index.html](index.html) |
-| Turtle | [ontology.ttl](ontology.ttl) |
-| RDF/XML | [ontology.owl](ontology.owl) |
-| JSON-LD | [ontology.jsonld](ontology.jsonld) |
-| N-Triples | [ontology.nt](ontology.nt) |
 
 ## Namespace
 
